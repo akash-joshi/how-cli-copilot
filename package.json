@@ -1,10 +1,10 @@
 {
   "name": "hey-how",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "Get CLI answers for plain-text queries.",
   "main": "index.mjs",
   "bin": {
-    "how": "./index.mjs"
+    "how": "./slide5/index2.mjs"
   },
   "scripts": {
     "type-check": "tsc --noEmit",
