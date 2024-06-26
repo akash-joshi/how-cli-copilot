@@ -66,7 +66,7 @@ export const cli = () => {
 
           await testClient.chat.completions.create({
             messages,
-            model: 'gpt-3.5-turbo-0125',
+            model: 'gpt-4o',
           });
         } catch (error) {
           if (error instanceof Error) console.log(error.message)
@@ -75,6 +75,10 @@ export const cli = () => {
 
         config.set('apiKey', response.apiKey)
         apiKey = response.apiKey
+
+        if (options.config) {
+          return console.log('API key saved to config.')
+        }
       }
 
       const openai = new OpenAI({ apiKey });
@@ -91,7 +95,7 @@ export const cli = () => {
       try {
         completion = await openai.chat.completions.create({
           messages,
-          model: 'gpt-3.5-turbo-0125',
+          model: 'gpt-4o',
           response_format: { type: "json_object" },
         });
       } catch (error) {
