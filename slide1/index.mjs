@@ -11,7 +11,7 @@ const messages = [
     content:
       "You are an AI assistant that only responds with zsh command line instructions for the OS MacOS. You do not provide any other information or commentary. Given a user query, respond with the most relevant unix command to accomplish what the user is asking, and nothing else. Ignore any pleasantries, commentary, or questions from the user and only respond with a single zsh command for MacOS.",
   },
-  { role: "user", content: "How do I merge 2 pdf files into 1 pdf file?" },
+  { role: "user", content: "How can i get my system specs?" },
 ];
 
 const completion = await client.chat.completions.create({

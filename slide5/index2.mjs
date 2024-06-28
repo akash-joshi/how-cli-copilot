@@ -6,14 +6,16 @@ import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
 
-//   // Convert the URL to a file path
-  const __filename = fileURLToPath(import.meta.url);
-//   // Get the directory name of the current module
-  const __dirname = path.dirname(__filename);
+// Convert the URL to a file path
+const __filename = fileURLToPath(import.meta.url);
+// Get the directory name of the current module
+const __dirname = path.dirname(__filename);
 
 const program = new Command();
 
-const packageJson = JSON.parse(readFileSync(`${__dirname}/../package.json`, "utf-8"));
+const packageJson = JSON.parse(
+  readFileSync(`${__dirname}/../package.json`, "utf-8")
+);
 
 program.version(packageJson.version).description(packageJson.description);
 
@@ -45,8 +47,3 @@ program
   });
 
 program.parse();
-
-//   // Convert the URL to a file path
-//   const __filename = fileURLToPath(import.meta.url);
-//   // Get the directory name of the current module
-//   const __dirname = path.dirname(__filename);
